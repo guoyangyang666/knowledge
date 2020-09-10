@@ -99,3 +99,39 @@ function func6() {
   console.log("-----d外面:", d);// 5,if语句和for语句中用var定义的变量可以在外面访问到，
   // 可见，if语句和for语句属于块作用域，不属于函数作用域。
 }
+
+
+// 箭头函数和var
+function funcvar1() {
+  var a = 10;
+  b();
+  function b() {
+    console.log("a1:",a);// 10
+    a = 11;
+    console.log("a2:",a);// 11
+  }
+}
+
+// 箭头函数和var
+function funcvar2() {
+  var a = 10;
+  b();
+  function b() {
+    console.log("a1:",a);// undefined
+    var a = 11;
+    console.log("a2:",a);// 11
+  }
+}
+
+// 箭头函数和var
+function funcvar3() {
+  var a = 10;
+  () => {
+    console.log("a1:",a);// undefined
+    var a = 11;
+    console.log("a2:",a);// 11
+  }
+}
+
+
+
